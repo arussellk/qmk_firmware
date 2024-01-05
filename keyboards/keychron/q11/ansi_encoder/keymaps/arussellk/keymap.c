@@ -69,13 +69,3 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [WIN_FN]   = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI), ENCODER_CCW_CW(RGB_VAD, RGB_VAI) }
 };
 #endif // ENCODER_MAP_ENABLE
-
-#ifdef RGB_MATRIX_ENABLE
-// https://github.com/qmk/qmk_firmware/blob/master/docs/feature_rgb_matrix.md
-void keyboard_post_init_user(void) {
-  rgb_matrix_mode(RGB_MATRIX_RAINBOW_MOVING_CHEVRON);
-
-  // Acceptable range: 0...255, typical default = 127. Lower is slower.
-  rgb_matrix_set_speed_noeeprom(25);
-}
-#endif
